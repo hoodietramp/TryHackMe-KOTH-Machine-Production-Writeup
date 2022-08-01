@@ -1,0 +1,180 @@
+# Nmap 7.92 scan initiated Mon Aug  1 14:50:03 2022 as: nmap -sC -sV -oN nmap/initial 10.10.224.175
+Nmap scan report for 10.10.224.175
+Host is up (0.16s latency).
+Not shown: 993 closed tcp ports (conn-refused)
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 3.0.3
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:10.8.91.66
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| -rwxrwxrwx    1 ftp      ftp           393 Aug 01 02:23 authorized_keys [NSE: writeable]
+| -rwxrwxrwx    1 ftp      ftp            33 Mar 26  2020 flag.txt [NSE: writeable]
+| -r--r--r--    1 ftp      ftp          1679 Aug 01 02:23 id_rsa
+|_-rwxrwxrwx    1 ftp      ftp           393 Aug 01 02:23 id_rsa.pub [NSE: writeable]
+22/tcp   open  ssh         OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 d3:4a:2e:ae:df:db:e1:1b:c1:62:2b:ce:15:00:73:6e (RSA)
+|   256 2e:63:62:b7:95:16:ea:0a:01:0e:12:ef:66:21:23:0b (ECDSA)
+|_  256 20:fe:a0:ce:52:f9:35:7b:8a:7a:d0:ee:c1:41:96:90 (ED25519)
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 4.3.11-Ubuntu (workgroup: WORKGROUP)
+9001/tcp open  tor-orport?
+| fingerprint-strings: 
+|   GenericLines, GetRequest, JavaRMI, Radmin: 
+|     ================================================
+|     Ashu's Password Protected Backdoor 
+|     ================================================
+|     Password Incorrect
+|   NULL, SSLSessionReq, SSLv23SessionReq, TLSSessionReq, mongodb: 
+|     ================================================
+|     Ashu's Password Protected Backdoor 
+|_    ================================================
+9002/tcp open  dynamid?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GetRequest, HTTPOptions, LANDesk-RC, NotesRPC, RTSPRequest, SIPOptions, afp, giop: 
+|     Overly Limited Shell
+|     Segfault
+|   GenericLines, Help, JavaRMI, LPDString, X11Probe: 
+|     Overly Limited Shell
+|     Command Executed
+|   Kerberos, LDAPBindReq, LDAPSearchReq, NCP, NULL, RPCCheck, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, WMSRequest, ms-sql-s, oracle-tns: 
+|_    Overly Limited Shell
+9999/tcp open  http        Golang net/http server
+| fingerprint-strings: 
+|   FourOhFourRequest, GetRequest, HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     Date: Mon, 01 Aug 2022 09:20:45 GMT
+|     Content-Length: 1
+|     Content-Type: text/plain; charset=utf-8
+|   GenericLines, Help, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, Socks5: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain
+|     Connection: close
+|     Request
+|   OfficeScan: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain
+|     Connection: close
+|_    Request: missing required Host header
+|_http-title: Site doesn't have a title (text/plain; charset=utf-8).
+3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9001-TCP:V=7.92%I=7%D=8/1%Time=62E79AED%P=x86_64-pc-linux-gnu%r(NUL
+SF:L,95,"\n================================================\n\x20\x20\x20\
+SF:x20\x20\x20Ashu's\x20Password\x20Protected\x20Backdoor\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\n================================================\n\n")
+SF:%r(GenericLines,A8,"\n================================================\
+SF:n\x20\x20\x20\x20\x20\x20Ashu's\x20Password\x20Protected\x20Backdoor\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\n========================================
+SF:========\n\nPassword\x20Incorrect\n")%r(GetRequest,A8,"\n==============
+SF:==================================\n\x20\x20\x20\x20\x20\x20Ashu's\x20P
+SF:assword\x20Protected\x20Backdoor\x20\x20\x20\x20\x20\x20\x20\x20\n=====
+SF:===========================================\n\nPassword\x20Incorrect\n"
+SF:)%r(SSLSessionReq,95,"\n===============================================
+SF:=\n\x20\x20\x20\x20\x20\x20Ashu's\x20Password\x20Protected\x20Backdoor\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\n======================================
+SF:==========\n\n")%r(TLSSessionReq,95,"\n================================
+SF:================\n\x20\x20\x20\x20\x20\x20Ashu's\x20Password\x20Protect
+SF:ed\x20Backdoor\x20\x20\x20\x20\x20\x20\x20\x20\n=======================
+SF:=========================\n\n")%r(SSLv23SessionReq,95,"\n==============
+SF:==================================\n\x20\x20\x20\x20\x20\x20Ashu's\x20P
+SF:assword\x20Protected\x20Backdoor\x20\x20\x20\x20\x20\x20\x20\x20\n=====
+SF:===========================================\n\n")%r(JavaRMI,A8,"\n=====
+SF:===========================================\n\x20\x20\x20\x20\x20\x20As
+SF:hu's\x20Password\x20Protected\x20Backdoor\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\n================================================\n\nPassword\x20Inc
+SF:orrect\n")%r(Radmin,A8,"\n=============================================
+SF:===\n\x20\x20\x20\x20\x20\x20Ashu's\x20Password\x20Protected\x20Backdoo
+SF:r\x20\x20\x20\x20\x20\x20\x20\x20\n====================================
+SF:============\n\nPassword\x20Incorrect\n")%r(mongodb,95,"\n=============
+SF:===================================\n\x20\x20\x20\x20\x20\x20Ashu's\x20
+SF:Password\x20Protected\x20Backdoor\x20\x20\x20\x20\x20\x20\x20\x20\n====
+SF:============================================\n\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9002-TCP:V=7.92%I=7%D=8/1%Time=62E79AED%P=x86_64-pc-linux-gnu%r(NUL
+SF:L,15,"Overly\x20Limited\x20Shell\n")%r(GenericLines,26,"Overly\x20Limit
+SF:ed\x20Shell\nCommand\x20Executed\n")%r(GetRequest,1E,"Overly\x20Limited
+SF:\x20Shell\nSegfault\n")%r(HTTPOptions,1E,"Overly\x20Limited\x20Shell\nS
+SF:egfault\n")%r(RTSPRequest,1E,"Overly\x20Limited\x20Shell\nSegfault\n")%
+SF:r(RPCCheck,15,"Overly\x20Limited\x20Shell\n")%r(DNSVersionBindReqTCP,1E
+SF:,"Overly\x20Limited\x20Shell\nSegfault\n")%r(DNSStatusRequestTCP,1E,"Ov
+SF:erly\x20Limited\x20Shell\nSegfault\n")%r(Help,26,"Overly\x20Limited\x20
+SF:Shell\nCommand\x20Executed\n")%r(SSLSessionReq,15,"Overly\x20Limited\x2
+SF:0Shell\n")%r(TerminalServerCookie,15,"Overly\x20Limited\x20Shell\n")%r(
+SF:TLSSessionReq,15,"Overly\x20Limited\x20Shell\n")%r(Kerberos,15,"Overly\
+SF:x20Limited\x20Shell\n")%r(SMBProgNeg,15,"Overly\x20Limited\x20Shell\n")
+SF:%r(X11Probe,26,"Overly\x20Limited\x20Shell\nCommand\x20Executed\n")%r(F
+SF:ourOhFourRequest,1E,"Overly\x20Limited\x20Shell\nSegfault\n")%r(LPDStri
+SF:ng,26,"Overly\x20Limited\x20Shell\nCommand\x20Executed\n")%r(LDAPSearch
+SF:Req,15,"Overly\x20Limited\x20Shell\n")%r(LDAPBindReq,15,"Overly\x20Limi
+SF:ted\x20Shell\n")%r(SIPOptions,1E,"Overly\x20Limited\x20Shell\nSegfault\
+SF:n")%r(LANDesk-RC,1E,"Overly\x20Limited\x20Shell\nSegfault\n")%r(Termina
+SF:lServer,15,"Overly\x20Limited\x20Shell\n")%r(NCP,15,"Overly\x20Limited\
+SF:x20Shell\n")%r(NotesRPC,1E,"Overly\x20Limited\x20Shell\nSegfault\n")%r(
+SF:JavaRMI,26,"Overly\x20Limited\x20Shell\nCommand\x20Executed\n")%r(WMSRe
+SF:quest,15,"Overly\x20Limited\x20Shell\n")%r(oracle-tns,15,"Overly\x20Lim
+SF:ited\x20Shell\n")%r(ms-sql-s,15,"Overly\x20Limited\x20Shell\n")%r(afp,1
+SF:E,"Overly\x20Limited\x20Shell\nSegfault\n")%r(giop,1E,"Overly\x20Limite
+SF:d\x20Shell\nSegfault\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9999-TCP:V=7.92%I=7%D=8/1%Time=62E79AED%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,75,"HTTP/1\.0\x20200\x20OK\r\nDate:\x20Mon,\x2001\x20Aug\x20202
+SF:2\x2009:20:45\x20GMT\r\nContent-Length:\x201\r\nContent-Type:\x20text/p
+SF:lain;\x20charset=utf-8\r\n\r\n\n")%r(HTTPOptions,75,"HTTP/1\.0\x20200\x
+SF:20OK\r\nDate:\x20Mon,\x2001\x20Aug\x202022\x2009:20:45\x20GMT\r\nConten
+SF:t-Length:\x201\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n
+SF:\n")%r(FourOhFourRequest,75,"HTTP/1\.0\x20200\x20OK\r\nDate:\x20Mon,\x2
+SF:001\x20Aug\x202022\x2009:20:45\x20GMT\r\nContent-Length:\x201\r\nConten
+SF:t-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n\n")%r(GenericLines,58,"
+SF:HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain\r\nCo
+SF:nnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(RTSPRequest,58,"HTT
+SF:P/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain\r\nConne
+SF:ction:\x20close\r\n\r\n400\x20Bad\x20Request")%r(Help,58,"HTTP/1\.1\x20
+SF:400\x20Bad\x20Request\r\nContent-Type:\x20text/plain\r\nConnection:\x20
+SF:close\r\n\r\n400\x20Bad\x20Request")%r(SSLSessionReq,58,"HTTP/1\.1\x204
+SF:00\x20Bad\x20Request\r\nContent-Type:\x20text/plain\r\nConnection:\x20c
+SF:lose\r\n\r\n400\x20Bad\x20Request")%r(LPDString,58,"HTTP/1\.1\x20400\x2
+SF:0Bad\x20Request\r\nContent-Type:\x20text/plain\r\nConnection:\x20close\
+SF:r\n\r\n400\x20Bad\x20Request")%r(SIPOptions,58,"HTTP/1\.1\x20400\x20Bad
+SF:\x20Request\r\nContent-Type:\x20text/plain\r\nConnection:\x20close\r\n\
+SF:r\n400\x20Bad\x20Request")%r(Socks5,58,"HTTP/1\.1\x20400\x20Bad\x20Requ
+SF:est\r\nContent-Type:\x20text/plain\r\nConnection:\x20close\r\n\r\n400\x
+SF:20Bad\x20Request")%r(OfficeScan,76,"HTTP/1\.1\x20400\x20Bad\x20Request\
+SF:r\nContent-Type:\x20text/plain\r\nConnection:\x20close\r\n\r\n400\x20Ba
+SF:d\x20Request:\x20missing\x20required\x20Host\x20header");
+Service Info: Host: THM-PROD; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2022-08-01T09:23:49
+|_  start_date: N/A
+| smb-os-discovery: 
+|   OS: Windows 6.1 (Samba 4.3.11-Ubuntu)
+|   Computer name: thm-prod
+|   NetBIOS computer name: THM-PROD\x00
+|   Domain name: \x00
+|   FQDN: thm-prod
+|_  System time: 2022-08-01T02:23:50-07:00
+|_clock-skew: mean: 2h20m00s, deviation: 4h02m31s, median: 0s
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Aug  1 14:54:00 2022 -- 1 IP address (1 host up) scanned in 236.48 seconds
