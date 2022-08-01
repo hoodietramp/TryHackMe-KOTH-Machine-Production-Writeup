@@ -63,11 +63,9 @@ you'll find the password you need to enter to access the backdoor on port `9001`
 
 ![image](images/python.png)
 
-Let's check for `suid` bits after getting user `skidy`:<br />
+Let's check for the sudo abilities of user `skidy`:<br />
 
-`find / -perm -4000 2>/dev/null`<br />
-
-![image](images/suid.png)
+![image](images/skidysudo.png)
 
 ```
 We see /usr/bin/git there, let's check its gtfo-bins page
