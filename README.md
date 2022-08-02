@@ -93,7 +93,7 @@ nc 10.10.224.175 9001
 
 put the pass we found in the python script in the home directory of user skidy `y......!`<br />
 
-![image](images/9001.png)
+![image](images/nc9001.png)
 
 > On port 9001, do-<br />
 
